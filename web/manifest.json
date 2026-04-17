@@ -1,0 +1,12 @@
+{
+  "name": "Mini Katalog",
+  "short_name": "Mini Katalog",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F7F8FA",
+  "theme_color": "#2563EB",
+  "description": "Flutter egitimi icin mini katalog uygulamasi",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": []
+}

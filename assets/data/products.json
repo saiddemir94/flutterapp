@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Nova Kulaklik",
+    "category": "Teknoloji",
+    "price": 1299.90,
+    "rating": 4.8,
+    "color": "2B6CB0",
+    "icon": "headphones",
+    "image": "assets/images/headphones.png",
+    "description": "Gunluk kullanim, ders ve muzik icin hafif tasarimli kablosuz kulaklik."
+  },
+  {
+    "id": 2,
+    "name": "Orbit Saat",
+    "category": "Aksesuar",
+    "price": 2199.00,
+    "rating": 4.6,
+    "color": "2F855A",
+    "icon": "watch",
+    "image": "assets/images/watch.png",
+    "description": "Bildirim, adim sayar ve uzun pil omruyle sade bir akilli saat deneyimi."
+  },
+  {
+    "id": 3,
+    "name": "Studio Canta",
+    "category": "Giyim",
+    "price": 749.50,
+    "rating": 4.4,
+    "color": "B7791F",
+    "icon": "bag",
+    "image": "assets/images/bag.png",
+    "description": "Laptop bolmesi, genis ic hacim ve sehir ici kullanim icin dayanikli sirt cantasi."
+  },
+  {
+    "id": 4,
+    "name": "Pixel Kamera",
+    "category": "Teknoloji",
+    "price": 4899.00,
+    "rating": 4.9,
+    "color": "9F7AEA",
+    "icon": "camera",
+    "image": "assets/images/camera.png",
+    "description": "Icerik ureticileri icin kompakt govdeli, yuksek cozunurluklu fotograf kamerasi."
+  },
+  {
+    "id": 5,
+    "name": "Breeze Termos",
+    "category": "Yasam",
+    "price": 399.90,
+    "rating": 4.5,
+    "color": "319795",
+    "icon": "coffee",
+    "image": "assets/images/thermos.png",
+    "description": "Sicak ve soguk icecekleri uzun sure koruyan celik govdeli tasinabilir termos."
+  },
+  {
+    "id": 6,
+    "name": "Pulse Hoparlor",
+    "category": "Teknoloji",
+    "price": 999.00,
+    "rating": 4.7,
+    "color": "C05621",
+    "icon": "speaker",
+    "image": "assets/images/speaker.png",
+    "description": "Bluetooth baglanti, guclu ses ve kompakt tasarimla tasinabilir hoparlor."
+  }
+]
