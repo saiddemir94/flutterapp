@@ -7,6 +7,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Mini Katalog'), findsOneWidget);
-    expect(find.text('Haftanin secili urunleri'), findsOneWidget);
+    expect(find.text('Mini Katalog Uygulamasi'), findsOneWidget);
+    expect(find.text('Urun Listesine Git'), findsOneWidget);
   });
 }
