@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'Ana sayfadan urun listesine gec, kartlari incele ve detay ekraninda sepete ekleme simulasyonunu dene.',
+                  'Yeni urunleri kesfet, favori parcalarini incele ve katalogda hizlica gez.',
                   style: TextStyle(
                     color: Color(0xFFEFF6FF),
                     fontSize: 15,
@@ -65,20 +65,23 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 22),
-          const _FeatureRow(
-            icon: Icons.home_outlined,
-            title: 'Ana sayfa',
-            description: 'Uygulama giris ekrani ve listeye gecis.',
+          const Text(
+            'One Cikanlar',
+            style: TextStyle(
+              color: Color(0xFF111827),
+              fontSize: 20,
+              fontWeight: FontWeight.w900,
+            ),
           ),
-          const _FeatureRow(
-            icon: Icons.grid_view_rounded,
-            title: 'Urun listesi',
-            description: 'GridView ile kart tabanli urun tasarimi.',
-          ),
-          const _FeatureRow(
-            icon: Icons.open_in_new_rounded,
-            title: 'Urun detayi',
-            description: 'Navigator ve route arguments ile veri tasima.',
+          const SizedBox(height: 12),
+          const _PreviewStrip(),
+          const SizedBox(height: 22),
+          OutlinedButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, ProductListScreen.routeName);
+            },
+            icon: const Icon(Icons.arrow_forward),
+            label: const Text('Tum Urunleri Gor'),
           ),
         ],
       ),
@@ -86,54 +89,67 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class _FeatureRow extends StatelessWidget {
-  const _FeatureRow({
-    required this.icon,
-    required this.title,
-    required this.description,
-  });
-
-  final IconData icon;
-  final String title;
-  final String description;
+class _PreviewStrip extends StatelessWidget {
+  const _PreviewStrip();
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        children: [
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: const Color(0xFFEFF6FF),
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: Icon(icon, color: const Color(0xFF2563EB)),
+    return SizedBox(
+      height: 150,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: const [
+          _PreviewItem(
+            image: 'assets/images/headphones.png',
+            title: 'Kulaklik',
           ),
-          const SizedBox(width: 14),
+          _PreviewItem(
+            image: 'assets/images/watch.png',
+            title: 'Saat',
+          ),
+          _PreviewItem(
+            image: 'assets/images/bag.png',
+            title: 'Canta',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _PreviewItem extends StatelessWidget {
+  const _PreviewItem({
+    required this.image,
+    required this.title,
+  });
+
+  final String image;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 132,
+      margin: const EdgeInsets.only(right: 12),
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: const Color(0xFFE5E7EB)),
+      ),
+      child: Column(
+        children: [
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    color: Color(0xFF111827),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  description,
-                  style: const TextStyle(
-                    color: Color(0xFF6B7280),
-                    height: 1.35,
-                  ),
-                ),
-              ],
+            child: Image.asset(image, fit: BoxFit.contain),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: Color(0xFF111827),
+              fontWeight: FontWeight.w800,
             ),
           ),
         ],
