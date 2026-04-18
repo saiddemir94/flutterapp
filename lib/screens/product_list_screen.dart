@@ -21,6 +21,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
   late Future<List<Product>> _productsFuture;
   String _query = '';
+  String _selectedCategory = 'Tumu';
 
   @override
   void initState() {
@@ -69,14 +70,22 @@ class _ProductListScreenState extends State<ProductListScreen> {
   }
 
   List<Product> _filterProducts(List<Product> products) {
-    if (_query.isEmpty) {
-      return products;
-    }
-
     return products.where((product) {
-      return product.name.toLowerCase().contains(_query) ||
+      final matchesQuery = _query.isEmpty ||
+          product.name.toLowerCase().contains(_query) ||
           product.category.toLowerCase().contains(_query);
+      final matchesCategory = _selectedCategory == 'Tumu' ||
+          product.category == _selectedCategory;
+
+      return matchesQuery && matchesCategory;
     }).toList();
+  }
+
+  List<String> _categoriesFor(List<Product> products) {
+    final categories = products.map((product) => product.category).toSet()
+      .toList()
+      ..sort();
+    return ['Tumu', ...categories];
   }
 
   @override
@@ -111,7 +120,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
             );
           }
 
-          final products = _filterProducts(snapshot.data ?? <Product>[]);
+          final allProducts = snapshot.data ?? <Product>[];
+          final products = _filterProducts(allProducts);
+          final categories = _categoriesFor(allProducts);
 
           return CustomScrollView(
             slivers: [
@@ -143,6 +154,27 @@ class _ProductListScreenState extends State<ProductListScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 14),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            for (final category in categories)
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: ChoiceChip(
+                                  label: Text(category),
+                                  selected: _selectedCategory == category,
+                                  onSelected: (_) {
+                                    setState(() {
+                                      _selectedCategory = category;
+                                    });
+                                  },
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -161,7 +193,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                       maxCrossAxisExtent: 240,
                       mainAxisSpacing: 14,
                       crossAxisSpacing: 14,
-                      childAspectRatio: 0.74,
+                      childAspectRatio: 0.68,
                     ),
                     itemBuilder: (context, index) {
                       final product = products[index];

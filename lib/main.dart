@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'screens/home_screen.dart';
 import 'screens/product_detail_screen.dart';
 import 'screens/product_list_screen.dart';
+import 'screens/shell_screen.dart';
 
 void main() {
   runApp(const MiniKatalogApp());
@@ -29,6 +29,19 @@ class MiniKatalogApp extends StatelessWidget {
           backgroundColor: Color(0xFFF7F8FA),
           foregroundColor: Color(0xFF111827),
         ),
+        navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: Colors.white,
+          indicatorColor: const Color(0xFFEFF6FF),
+          labelTextStyle: MaterialStateProperty.resolveWith((states) {
+            final isSelected = states.contains(MaterialState.selected);
+            return TextStyle(
+              color: isSelected
+                  ? const Color(0xFF2563EB)
+                  : const Color(0xFF6B7280),
+              fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
+            );
+          }),
+        ),
         cardTheme: CardThemeData(
           elevation: 0,
           color: Colors.white,
@@ -38,12 +51,12 @@ class MiniKatalogApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: HomeScreen.routeName,
+      initialRoute: CatalogShellScreen.routeName,
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case HomeScreen.routeName:
+          case CatalogShellScreen.routeName:
             return MaterialPageRoute<void>(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => const CatalogShellScreen(),
               settings: settings,
             );
           case ProductListScreen.routeName:

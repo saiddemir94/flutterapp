@@ -5,6 +5,7 @@ Flutter egitimi icin hazirlanmis basit fakat duzenli bir mini katalog uygulamasi
 ## Ozellikler
 
 - Ayri ana sayfa, urun listesi ve urun detay ekrani
+- Ana sayfa ve urunler icin alt navbar
 - Urun detay sayfasi
 - `Navigator.pushNamed` ile sayfa gecisi
 - `RouteSettings.arguments` mantigi icin detay sayfasina urun nesnesi tasima
@@ -12,6 +13,7 @@ Flutter egitimi icin hazirlanmis basit fakat duzenli bir mini katalog uygulamasi
 - `assets/images` klasorunden `Image.asset` ile urun gorselleri kullanma
 - Model sinifi ile `fromJson` ve `toJson` ornegi
 - Urun arama ve kategoriye gore filtreleme
+- Urun kartlarinda puan, fiyat ve sepet aksiyonu
 - Basit sepet ekle/cikar simulasyonu
 
 ## Klasor Yapisi
@@ -24,6 +26,7 @@ lib/
     product.dart
   screens/
     home_screen.dart
+    shell_screen.dart
     product_list_screen.dart
     product_detail_screen.dart
   widgets/

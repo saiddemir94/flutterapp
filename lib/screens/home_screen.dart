@@ -3,9 +3,21 @@ import 'package:flutter/material.dart';
 import 'product_list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({this.onOpenProducts, super.key});
 
-  static const routeName = '/';
+  static const routeName = '/home';
+
+  final VoidCallback? onOpenProducts;
+
+  void _openProducts(BuildContext context) {
+    final callback = onOpenProducts;
+    if (callback != null) {
+      callback();
+      return;
+    }
+
+    Navigator.pushNamed(context, ProductListScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +67,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 FilledButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, ProductListScreen.routeName);
-                  },
+                  onPressed: () => _openProducts(context),
                   icon: const Icon(Icons.grid_view_rounded),
                   label: const Text('Urun Listesine Git'),
                 ),
@@ -77,9 +87,7 @@ class HomeScreen extends StatelessWidget {
           const _PreviewStrip(),
           const SizedBox(height: 22),
           OutlinedButton.icon(
-            onPressed: () {
-              Navigator.pushNamed(context, ProductListScreen.routeName);
-            },
+            onPressed: () => _openProducts(context),
             icon: const Icon(Icons.arrow_forward),
             label: const Text('Tum Urunleri Gor'),
           ),
