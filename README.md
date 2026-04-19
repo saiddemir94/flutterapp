@@ -10,10 +10,11 @@ Flutter egitimi icin hazirlanmis basit fakat duzenli bir mini katalog uygulamasi
 - `Navigator.pushNamed` ile sayfa gecisi
 - `RouteSettings.arguments` mantigi icin detay sayfasina urun nesnesi tasima
 - `assets/data/products.json` dosyasindan veri okuma
-- `assets/images` klasorunden `Image.asset` ile urun gorselleri kullanma
+- `assets/images` klasorunden `Image.asset` ile gercek urun fotograflari kullanma
 - Model sinifi ile `fromJson` ve `toJson` ornegi
 - Urun arama ve kategoriye gore filtreleme
 - Urun kartlarinda puan, fiyat ve sepet aksiyonu
+- Urun kartina tiklayinca detay sayfasinda urun ozelliklerini gosterme
 - Basit sepet ekle/cikar simulasyonu
 
 ## Klasor Yapisi

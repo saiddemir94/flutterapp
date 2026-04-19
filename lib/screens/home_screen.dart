@@ -148,7 +148,7 @@ class _PreviewItem extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: Image.asset(image, fit: BoxFit.contain),
+            child: Image.asset(image, fit: BoxFit.cover),
           ),
           const SizedBox(height: 10),
           Text(

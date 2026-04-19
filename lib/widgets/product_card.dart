@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/product.dart';
+import 'product_image.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -36,17 +37,7 @@ class ProductCard extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(20),
-                    child: Image.asset(
-                      product.imageAsset,
-                      fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Icon(
-                          product.icon,
-                          size: 56,
-                          color: product.color,
-                        );
-                      },
-                    ),
+                    child: ProductImage(product: product),
                   ),
                 ),
               ),

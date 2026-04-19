@@ -11,6 +11,7 @@ class Product {
     required this.icon,
     required this.imageAsset,
     required this.description,
+    required this.features,
   });
 
   final int id;
@@ -22,6 +23,7 @@ class Product {
   final IconData icon;
   final String imageAsset;
   final String description;
+  final List<String> features;
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
@@ -34,6 +36,7 @@ class Product {
       icon: _iconFromName(json['icon'] as String),
       imageAsset: json['image'] as String,
       description: json['description'] as String,
+      features: List<String>.from(json['features'] as List<dynamic>? ?? []),
     );
   }
 
@@ -48,6 +51,7 @@ class Product {
       'icon': icon.codePoint,
       'image': imageAsset,
       'description': description,
+      'features': features,
     };
   }
 

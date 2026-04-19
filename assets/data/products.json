@@ -8,7 +8,8 @@
     "color": "2B6CB0",
     "icon": "headphones",
     "image": "assets/images/headphones.png",
-    "description": "Gunluk kullanim, ders ve muzik icin hafif tasarimli kablosuz kulaklik."
+    "description": "Gunluk kullanim, ders ve muzik icin hafif tasarimli kablosuz kulaklik.",
+    "features": ["Kablosuz baglanti", "Yumusak kulak yastigi", "Katlanabilir tasarim"]
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "color": "2F855A",
     "icon": "watch",
     "image": "assets/images/watch.png",
-    "description": "Bildirim, adim sayar ve uzun pil omruyle sade bir akilli saat deneyimi."
+    "description": "Bildirim, adim sayar ve uzun pil omruyle sade bir akilli saat deneyimi.",
+    "features": ["Adim sayar", "Bildirim takibi", "Suya dayanikli govde"]
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "color": "B7791F",
     "icon": "bag",
     "image": "assets/images/bag.png",
-    "description": "Laptop bolmesi, genis ic hacim ve sehir ici kullanim icin dayanikli sirt cantasi."
+    "description": "Laptop bolmesi, genis ic hacim ve sehir ici kullanim icin dayanikli sirt cantasi.",
+    "features": ["Laptop bolmesi", "Ayarlanabilir askilar", "Genis ic hacim"]
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "color": "9F7AEA",
     "icon": "camera",
     "image": "assets/images/camera.png",
-    "description": "Icerik ureticileri icin kompakt govdeli, yuksek cozunurluklu fotograf kamerasi."
+    "description": "Icerik ureticileri icin kompakt govdeli, yuksek cozunurluklu fotograf kamerasi.",
+    "features": ["Optik zoom", "Kompakt govde", "Yuksek cozunurluk"]
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "color": "319795",
     "icon": "coffee",
     "image": "assets/images/thermos.png",
-    "description": "Sicak ve soguk icecekleri uzun sure koruyan celik govdeli tasinabilir termos."
+    "description": "Sicak ve soguk icecekleri uzun sure koruyan celik govdeli tasinabilir termos.",
+    "features": ["Isiyi uzun sure korur", "Sizdirmaz kapak", "Tasinabilir govde"]
   },
   {
     "id": 6,
@@ -63,6 +68,7 @@
     "color": "C05621",
     "icon": "speaker",
     "image": "assets/images/speaker.png",
-    "description": "Bluetooth baglanti, guclu ses ve kompakt tasarimla tasinabilir hoparlor."
+    "description": "Bluetooth baglanti, guclu ses ve kompakt tasarimla tasinabilir hoparlor.",
+    "features": ["Bluetooth baglanti", "Guclu bass", "Tasinabilir tasarim"]
   }
 ]

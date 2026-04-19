@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/product.dart';
+import '../widgets/product_image.dart';
 
 class ProductDetailArguments {
   const ProductDetailArguments({
@@ -71,13 +72,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(42),
-                child: Image.asset(
-                  product.imageAsset,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Icon(product.icon, color: product.color, size: 118);
-                  },
-                ),
+                child: ProductImage(product: product),
               ),
             ),
             const SizedBox(height: 24),
@@ -124,16 +119,42 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 10),
-            Text(
-              product.description,
-              style: const TextStyle(
-                color: Color(0xFF4B5563),
-                fontSize: 16,
-                height: 1.5,
+          Text(
+            product.description,
+            style: const TextStyle(
+              color: Color(0xFF4B5563),
+              fontSize: 16,
+              height: 1.5,
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            'Ozellikler',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(height: 10),
+          for (final feature in product.features)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                children: [
+                  Icon(Icons.check_circle, color: product.color, size: 20),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      feature,
+                      style: const TextStyle(
+                        color: Color(0xFF374151),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 30),
-            FilledButton.icon(
+          const SizedBox(height: 30),
+          FilledButton.icon(
               onPressed: () {
                 final willAddToCart = !_isInCart;
                 _toggleCart();
