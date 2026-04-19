@@ -17,33 +17,6 @@ Flutter egitimi icin hazirlanmis basit fakat duzenli bir mini katalog uygulamasi
 - Urun kartina tiklayinca detay sayfasinda urun ozelliklerini gosterme
 - Basit sepet ekle/cikar simulasyonu
 
-## Klasor Yapisi
-
-```text
-lib/
-  data/
-    product_repository.dart
-  models/
-    product.dart
-  screens/
-    home_screen.dart
-    shell_screen.dart
-    product_list_screen.dart
-    product_detail_screen.dart
-  widgets/
-    product_card.dart
-  main.dart
-assets/
-  data/
-    products.json
-  images/
-    headphones.png
-    watch.png
-    bag.png
-    camera.png
-    thermos.png
-    speaker.png
-```
 
 ## Kullanilan Flutter Surumu
 
@@ -71,5 +44,15 @@ Bu klasorde Flutter SDK komutu bulunamadigi icin proje dosyalari elle olusturuld
 ```bash
 flutter create .
 ```
+Alternatif olarak firebase studio da flutter web server ile çalıştırılabilir.
 
-Web hedefi icin temel `web/` klasoru eklendi. Android veya iOS platform dosyalari gerekiyorsa yukaridaki komut Flutter tarafindan standart klasorleri olusturur.
+## Görseller
+
+<img width="1684" height="802" alt="flss1" src="https://github.com/user-attachments/assets/d96e0bb7-7248-4cc8-92eb-33c026a29cf7" />
+
+<img width="1716" height="806" alt="flss2" src="https://github.com/user-attachments/assets/52efd74d-8339-4b5a-aab5-f50b4394cc85" />
+
+<img width="1729" height="797" alt="flss33" src="https://github.com/user-attachments/assets/7f1013ce-ce78-4aee-817d-5531b98d9902" />
+
+
+
